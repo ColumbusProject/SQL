@@ -18,7 +18,7 @@ INSERT INTO user_hashtag VALUES ('4', 'Meow', '뭐더라');
 UPDATE user_hashtag SET hashtag = '가성비' WHERE user_id = 'Meow' AND hashtag_number = 4;
 
 -- 유저 관심사 해시태그 삭제
-DELETE hashtag FROM user_hashtag WHERE user_id = 'Meow' AND hashtag_number = 4;
+DELETE FROM user_hashtag WHERE user_id = 'Meow' AND hashtag_number = 4;
 
 -- 닉네임 수정
 UPDATE user SET nickname = '고양아 멍멍해봐' WHERE user_id = 'Meow';
