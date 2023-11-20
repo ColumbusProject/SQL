@@ -298,3 +298,25 @@ INNER JOIN user AS U
 ON IB.writer_id = U.user_id
 LEFT JOIN itinerary_day_location AS IDL
 ON IB.itinearay_number = IDL.itinearay_number;
+
+CREATE VIEW travle_review_board_list_view AS
+SELECT
+  RB.review_number AS review_number,
+  RB.title AS title,
+  RB.content AS content,
+  RI.image AS image,
+  RB.favorite_count AS favorite_count,
+  RB.comment_count AS comment_count,
+  RB.view_count AS view_count,
+  RB.writer_id AS writer_id,
+  RB.write_datetime AS write_datetime,
+  RL.location AS location,
+  U.nickname AS writer_nickname,
+  U.profile_image AS writer_profile_image
+FROM travel_review AS RB
+INNER JOIN user AS U
+ON RB.writer_id = U.user_id
+LEFT JOIN travel_review_location AS RL
+ON RB.review_number = RL.review_number
+LEFT JOIN (SELECT review_number, ANY_VALUE(image) AS image FROM travel_review_image GROUP BY review_number) AS RI
+ON RB.review_number = RI.review_number;
