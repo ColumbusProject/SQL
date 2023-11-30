@@ -14,7 +14,7 @@ CREATE TABLE ITINERARY
 
 CREATE TABLE ITINERARY_ACCOUNT_BOOK
 (
-  sequence         INT         NOT NULL COMMENT '시퀀스',
+  sequence         INT         NOT NULL AUTO_INCREMENT COMMENT '시퀀스',
   itinearay_number INT         NOT NULL COMMENT '게시물 번호',
   money_type       VARCHAR(20) NOT NULL COMMENT '화폐 종류',
   money            INT         NOT NULL COMMENT '비용',
@@ -24,7 +24,7 @@ CREATE TABLE ITINERARY_ACCOUNT_BOOK
 
 CREATE TABLE ITINERARY_COMMENT
 (
-  comment_number   INT         NOT NULL COMMENT '댓글 번호',
+  comment_number   INT         NOT NULL AUTO_INCREMENT COMMENT '댓글 번호',
   itinearay_number INT         NOT NULL COMMENT '게시물 번호',
   writer_id        VARCHAR(50) NOT NULL COMMENT '작성자 아이디',
   content          TEXT        NOT NULL COMMENT '댓글 내용',
@@ -34,7 +34,7 @@ CREATE TABLE ITINERARY_COMMENT
 
 CREATE TABLE ITINERARY_DAY_LOCATION
 (
-  sequence         INT  NOT NULL COMMENT '시퀀스',
+  sequence         INT  NOT NULL AUTO_INCREMENT COMMENT '시퀀스',
   itinearay_number INT  NOT NULL COMMENT '게시물 번호',
   day              INT  NOT NULL COMMENT '일정 날짜',
   location         TEXT NOT NULL COMMENT '장소 이름',
@@ -51,7 +51,7 @@ CREATE TABLE ITINERARY_FAVORITE
 
 CREATE TABLE TRAVEL_REVIEW
 (
-  review_number  INT         NOT NULL COMMENT '게시물 번호',
+  review_number  INT         NOT NULL AUTO_INCREMENT COMMENT '게시물 번호',
   writer_id      VARCHAR(50) NOT NULL COMMENT '작성자 아이디',
   title          VARCHAR(50) NOT NULL COMMENT '게시물 제목',
   content        TEXT        NOT NULL COMMENT '게시물 내용',
@@ -64,7 +64,7 @@ CREATE TABLE TRAVEL_REVIEW
 
 CREATE TABLE TRAVEL_REVIEW_COMMENT
 (
-  comment_number INT         NOT NULL COMMENT '댓글 번호',
+  comment_number INT         NOT NULL AUTO_INCREMENT COMMENT '댓글 번호',
   review_number  INT         NOT NULL COMMENT '게시물 번호',
   writer_id      VARCHAR(50) NOT NULL COMMENT '작성자 아이디',
   content        TEXT        NOT NULL COMMENT '댓글 내용',
@@ -81,7 +81,7 @@ CREATE TABLE TRAVEL_REVIEW_FAVORITE
 
 CREATE TABLE TRAVEL_REVIEW_IMAGE
 (
-  sequence      INT  NOT NULL COMMENT '시퀀스',
+  sequence      INT  NOT NULL AUTO_INCREMENT COMMENT '시퀀스',
   image         TEXT NOT NULL COMMENT '이미지',
   review_number INT  NOT NULL COMMENT '게시물 번호',
   PRIMARY KEY (sequence)
@@ -89,7 +89,7 @@ CREATE TABLE TRAVEL_REVIEW_IMAGE
 
 CREATE TABLE TRAVEL_REVIEW_LOCATION
 (
-  sequence      INT  NOT NULL COMMENT '시퀀스',
+  sequence      INT  NOT NULL AUTO_INCREMENT COMMENT '시퀀스',
   location      TEXT NOT NULL COMMENT '장소',
   review_number INT  NOT NULL COMMENT '게시물 번호',
   PRIMARY KEY (sequence)
@@ -97,7 +97,7 @@ CREATE TABLE TRAVEL_REVIEW_LOCATION
 
 CREATE TABLE TRAVEL_TRADE
 (
-  travel_trade_number INT          NOT NULL COMMENT '게시물 번호',
+  travel_trade_number INT          NOT NULL AUTO_INCREMENT COMMENT '게시물 번호',
   writer_id           VARCHAR(50)  NOT NULL COMMENT '유저 아이디',
   title               VARCHAR(100) NOT NULL COMMENT '제목',
   item_type           VARCHAR(20)  NOT NULL COMMENT '물건 종류',
@@ -117,7 +117,7 @@ CREATE TABLE TRAVEL_TRADE_BOOKMARK
 
 CREATE TABLE TRAVEL_TRADE_HASHTAG
 (
-  sequence            INT         NOT NULL COMMENT '시퀀스',
+  sequence            INT         NOT NULL AUTO_INCREMENT COMMENT '시퀀스',
   travel_trade_number INT         NOT NULL COMMENT '게시물 번호',
   hashtag             VARCHAR(20) NOT NULL COMMENT '해시태그',
   PRIMARY KEY (sequence)
@@ -125,7 +125,7 @@ CREATE TABLE TRAVEL_TRADE_HASHTAG
 
 CREATE TABLE TRAVEL_TRADE_IMAGE
 (
-  sequence            INT          NOT NULL COMMENT '시퀀스',
+  sequence            INT          NOT NULL AUTO_INCREMENT COMMENT '시퀀스',
   travel_trade_number INT          NOT NULL COMMENT '게시물 번호',
   item_image          VARCHAR(255) NOT NULL COMMENT '상품 사진',
   PRIMARY KEY (sequence)
@@ -133,7 +133,7 @@ CREATE TABLE TRAVEL_TRADE_IMAGE
 
 CREATE TABLE TRAVEL_TRADE_LOCATION
 (
-  sequence            INT  NOT NULL COMMENT '시퀀스',
+  sequence            INT  NOT NULL AUTO_INCREMENT COMMENT '시퀀스',
   travel_trade_number INT  NOT NULL COMMENT '게시물 번호',
   location            TEXT NOT NULL COMMENT '장소 이름',
   PRIMARY KEY (sequence)
@@ -141,7 +141,7 @@ CREATE TABLE TRAVEL_TRADE_LOCATION
 
 CREATE TABLE TRAVEL_TRADE_MONEY
 (
-  sequence            INT         NOT NULL COMMENT '시퀀스',
+  sequence            INT         NOT NULL AUTO_INCREMENT COMMENT '시퀀스',
   travel_trade_number INT         NOT NULL COMMENT '게시물 번호',
   money_type          VARCHAR(20) NOT NULL COMMENT '화폐 종류',
   money               INT         NOT NULL COMMENT '가격',
@@ -162,7 +162,7 @@ CREATE TABLE USER
 
 CREATE TABLE USER_HASHTAG
 (
-  sequence INT         NOT NULL COMMENT '시퀀스',
+  sequence INT         NOT NULL AUTO_INCREMENT COMMENT '시퀀스',
   user_id  VARCHAR(50) NOT NULL COMMENT '유저 아이디',
   hashtag  VARCHAR(20) NOT NULL COMMENT '관심사 해시태그',
   PRIMARY KEY (sequence)
